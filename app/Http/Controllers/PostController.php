@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,6 +15,9 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::all();
+        // dd($posts);
+        return view('posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -24,6 +28,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        echo "create";
     }
 
     /**
@@ -35,6 +40,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        echo "store";
     }
 
     /**
@@ -46,6 +52,7 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        echo "show";
     }
 
     /**
@@ -57,6 +64,7 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        echo "edit";
     }
 
     /**
@@ -69,6 +77,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+        echo "update";
     }
 
     /**
@@ -80,5 +89,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+        echo "destroy";
     }
 }
