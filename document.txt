@@ -4,6 +4,7 @@ php artisan serve  (chạy server)
 
 php artisan make:model Post -m (tạo csdl)
 php artisan migrate   (tạo bảng)
+php artisan make:migration "tên bảng"   (sẽ chỉ tạo 1 bảng tên đó)
 php artisan make:seeder PostTableSeeder (tạo dữ liệu giả)
 php artisan db:seed --class PostTableSeeder ( chạy lệnh dữ liệu giả ) 
 

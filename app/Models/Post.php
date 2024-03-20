@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
+
 {
+    protected $table = 'posts';
     use HasFactory;
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
