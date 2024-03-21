@@ -16,7 +16,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('baiviet', function (Blueprint $table) {
-            $table->increments('ma_bviet');
+            $table->increments('ma_bviet'); // This is the auto-incrementing primary key
             $table->string('tieude', 200);
             $table->string('ten_bhat', 100);
             $table->text('tomtat');
