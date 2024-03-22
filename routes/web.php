@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,4 @@ use App\Http\Controllers\PostController;
 
 
 Route::resource('posts', PostController::class);
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'getAllArticales']);
