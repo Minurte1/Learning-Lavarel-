@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
+use App\Models\Article;
 
 class BaiVietTableSeeder extends Seeder
 {
@@ -28,8 +29,8 @@ class BaiVietTableSeeder extends Seeder
                 'noidung' => $faker->text(1000), // Generate 1000-character content (optional)
                 'ngayviet' => $faker->dateTimeThisYear, // Random date within current year
                 'hinhanh' => $faker->imageUrl(640, 480), // Generate random image URL
-                'ma_tgia' => rand(1, 10), // Random author ID between 1 and 10 (assuming authors exist)
-                'ma_tloai' => rand(1, 10), // Random category ID between 1 and 10 (assuming categories exist)
+                'ma_tgia' => rand(1, 100), // Random author ID between 1 and 10 (assuming authors exist)
+                'ma_tloai' => rand(1, 100), // Random category ID between 1 and 10 (assuming categories exist)
             ]);
         }
     }
