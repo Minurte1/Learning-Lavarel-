@@ -50,7 +50,10 @@ class ProductController extends Controller
             'price' => 'required|numeric',
         ]);
 
-        $product->update($request->all());
+        // Loại bỏ trường _token trước khi cập nhật dữ liệu
+        $data = $request->except(['_token']);
+
+        $product->update($data);
 
         return redirect()->route('products.index')
             ->with('success', 'Product updated successfully');
