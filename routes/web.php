@@ -15,8 +15,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+Route::resource('products', ProductController::class);
 
-Route::get('/products', [ProductController::class, 'index']);
+// Route::get('/products', [ProductController::class, 'index']);
 
 Route::resource('posts', PostController::class);
 Route::get('/', [HomeController::class, 'getAllArticales']);

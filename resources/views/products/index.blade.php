@@ -20,12 +20,12 @@
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
                 <td>
-                    {{-- <a href="{{ route('products.edit', $product->id) }}">Edit</a> --}}
-                    {{-- <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                    <a href="{{ route('products.edit', $product->id) }}">Edit</a>
+                    <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
-                    </form> --}}
+                    </form>
                 </td>
             </tr>
             @endforeach
