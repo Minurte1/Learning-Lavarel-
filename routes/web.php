@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,10 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
+
+
+Route::get('/register', [LoginController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [LoginController::class, 'register']);
 
 //Xác thực người dùng 
 Route::get('/profile', 'ProfileController@index')->middleware('auth');
