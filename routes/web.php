@@ -6,17 +6,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Examples\Example1Controller;
+use App\Http\Controllers\Examples\Example2Controller;
+use App\Http\Controllers\Examples\Example3Controller;
 
+Route::apiResource('example4', Example4Controller::class)->parameters([
+    'example4' => 'news'
+]);
+Route::any('/example3/{frm}', [Example3Controller::class, 'update']);
+Route::get('/example2', [Example2Controller::class, 'show']);
+Route::get('/example1', [Example1Controller::class, 'index'])->middleware('can:example1.viewAny');
 Route::resource('/dashboard', DashboardController::class);
 
 Route::get('/register', [LoginController::class, 'showRegistrationForm'])->name('register');
